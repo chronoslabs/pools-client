@@ -5,7 +5,7 @@ import { Network } from '~/types/networks';
 export const UNKNOWN_NETWORK = '0';
 
 export const knownNetworkToSubgraphUrl: Partial<Record<KnownNetwork, string>> = {
-    [NETWORKS.CANDLE]: 'https://api.thegraph.com/subgraphs/name/tracer-protocol/perpetual-pools-v2-arbitrum-one',
+    [NETWORKS.CANDLE]: 'https://thegraph.cndlchain.com/subgraphs/name/tracer-protocol/perpetual-pools-v2-arbitrum-one',
     [NETWORKS.ARBITRUM_RINKEBY]:
         'https://api.thegraph.com/subgraphs/name/tracer-protocol/perpetual-pools-v2-arbitrum-rinkeby',
 };
@@ -38,13 +38,13 @@ export const networkConfig: Record<KnownNetwork, Network> = {
     },
     [NETWORKS.CANDLE]: {
         id: NETWORKS.CANDLE,
-        name: 'Arbitrum',
+        name: 'Candle',
         logoTicker: NETWORKS.CANDLE,
-        previewUrl: 'https://arbiscan.io/',
-        hex: '0xA4B1',
-        publicRPC: process.env.NEXT_PUBLIC_MAINNET_RPC ?? 'https://arb1.arbitrum.io/rpc',
+        previewUrl: 'https://candlelabs.org/',
+        hex: '0x216',
+        publicRPC: process.env.NEXT_PUBLIC_MAINNET_RPC ?? 'https://rpc.cndlchain,com',
         publicWebsocketRPC: process.env.NEXT_PUBLIC_MAINNET_WSS_RPC,
-        usdcAddress: '0xff970a61a04b1ca14834a43f5de4533ebddb5cc8',
+        usdcAddress: '	0xad43669cbAC863e33449d423261E525de8da0Ff4',
         tcrAddress: '0xA72159FC390f0E3C6D415e658264c7c4051E9b87',
         knownMarketSpotPriceChainlinkFeeds: {
             'BTC/USD': {
