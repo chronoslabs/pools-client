@@ -92,8 +92,8 @@ export type LogoTicker =
     | 'DEFAULT';
 
 const logos: Record<LogoTicker, any> = {
-    [NETWORKS.CANDLE]: Arbitrum,
-    [NETWORKS.ARBITRUM_RINKEBY]: Arbitrum,
+    [NETWORKS.CANDLE]: Candle,
+    [NETWORKS.ARBITRUM_RINKEBY]: Candle,
     ETHERSCAN: Etherscan,
     USDC: USDC,
     USD: USD,

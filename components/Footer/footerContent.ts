@@ -19,19 +19,19 @@ export const footerSocialContent = [
     },
     {
         alt: 'Twitter',
-        href: 'https://twitter.com/TracerDAO',
+        href: 'https://twitter.com/chronoslabs',
         logo: TwitterLogo,
         className: 'w-6',
     },
     {
         alt: 'GitHub',
-        href: 'https://github.com/tracer-protocol/perpetual-pools-contracts',
+        href: 'https://github.com/chronoslabs/perpetual-pools-contracts',
         logo: GitHubLogo,
         className: 'w-6',
     },
     {
         alt: 'Discord',
-        href: 'https://discord.com/invite/tracerdao',
+        href: 'https://discord.com/invite/candlelabs',
         logo: DiscordLogo,
         className: 'w-6',
     },
