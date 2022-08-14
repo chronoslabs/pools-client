@@ -7,7 +7,7 @@ export type DestinationNetwork =
     | typeof NETWORKS.RINKEBY
     | typeof NETWORKS.ARBITRUM_RINKEBY
     | typeof NETWORKS.MAINNET
-    | typeof NETWORKS.ARBITRUM;
+    | typeof NETWORKS.CANDLE;
 
 export type BridgeableAssetWarnings = {
     [networkId: string]: {

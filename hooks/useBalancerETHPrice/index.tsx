@@ -7,7 +7,7 @@ const ZERO = new BigNumber(0);
 
 export default (() => {
     // doesnt really matter which network we use here as long as it has balanceConfig
-    //  which ARBITRUM does
-    const spotPrices = useBalancerSpotPrices(NETWORKS.ARBITRUM);
+    //  which CANDLE does
+    const spotPrices = useBalancerSpotPrices(NETWORKS.CANDLE);
     return useMemo(() => spotPrices['WETH'] || ZERO, [spotPrices['WETH']]);
 }) as () => BigNumber;

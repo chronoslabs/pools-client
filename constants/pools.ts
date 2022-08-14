@@ -118,7 +118,7 @@ type TokenListMapByNetwork = Partial<Record<KnownNetwork, PoolListMap>>;
  * Mapping of the TokenLists used on each network
  */
 export const POOL_LIST_MAP: TokenListMapByNetwork = {
-    [NETWORKS.ARBITRUM]: {
+    [NETWORKS.CANDLE]: {
         Tracer: {
             verified: `${TRACER_API}/poolsv2/poolList?network=42161&list=verified`,
             unverified: `${TRACER_API}/poolsv2/poolList?network=42161&list=unverified`,

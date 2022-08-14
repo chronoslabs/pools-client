@@ -48,7 +48,7 @@ export const farmConfig: Record<KnownNetwork, FarmConfig> = {
         ],
         sushiRouterAddress: '',
     },
-    [NETWORKS.ARBITRUM]: {
+    [NETWORKS.CANDLE]: {
         poolFarms: [
             // active
             {

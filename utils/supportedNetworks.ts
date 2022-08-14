@@ -1,9 +1,9 @@
-import { KnownNetwork, NETWORKS } from '@tracer-protocol/pools-js';
+import { KnownNetwork, NETWORKS } from '@cndllabs/pools-js';
 
-export const isArbitrumNetwork = (networkId: string): boolean =>
-    networkId === NETWORKS.ARBITRUM || networkId === NETWORKS.ARBITRUM_RINKEBY;
+export const isCandleNetwork = (networkId: string): boolean =>
+    networkId === NETWORKS.CANDLE || networkId === NETWORKS.ARBITRUM_RINKEBY;
 
-const supportedNetworks: string[] = [NETWORKS.ARBITRUM, NETWORKS.ARBITRUM_RINKEBY];
+const supportedNetworks: string[] = [NETWORKS.CANDLE, NETWORKS.ARBITRUM_RINKEBY];
 
 // for now this is exactly the same as the function above
 export const isSupportedNetwork = (networkId: number | string | undefined): boolean => {
@@ -12,7 +12,7 @@ export const isSupportedNetwork = (networkId: number | string | undefined): bool
 };
 
 const supportedBridgeNetworks: string[] = [
-    NETWORKS.ARBITRUM,
+    NETWORKS.CANDLE,
     NETWORKS.ARBITRUM_RINKEBY,
     NETWORKS.MAINNET,
     NETWORKS.RINKEBY,
@@ -24,5 +24,5 @@ export const isSupportedBridgeNetwork = (networkId?: KnownNetwork): boolean => {
     return supportedBridgeNetworks.includes(networkIdString ?? '');
 };
 
-const knownNetworks: string[] = [NETWORKS.ARBITRUM, NETWORKS.MAINNET, NETWORKS.ARBITRUM_RINKEBY, NETWORKS.RINKEBY];
+const knownNetworks: string[] = [NETWORKS.CANDLE, NETWORKS.MAINNET, NETWORKS.ARBITRUM_RINKEBY, NETWORKS.RINKEBY];
 export const isKnownNetwork = (networkId: string): boolean => knownNetworks.includes(networkId);

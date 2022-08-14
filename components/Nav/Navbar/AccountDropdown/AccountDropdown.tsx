@@ -99,7 +99,7 @@ const AccountDropdownButton = ({
                     target="_blank"
                     rel="noopener noreferrer"
                 >
-                    <Styled.ArbitrumLogo ticker={NETWORKS.ARBITRUM} />
+                    <Styled.ArbitrumLogo ticker={NETWORKS.CANDLE} />
                     <div className="text-xs">View on Arbiscan</div>
                 </Styled.ViewOnArbiscanOption>
             </div>

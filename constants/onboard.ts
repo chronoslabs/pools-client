@@ -16,7 +16,7 @@ export const onboardConfig: Initialization = {
             {
                 walletName: 'walletConnect',
                 rpc: {
-                    [NETWORKS.ARBITRUM]: networkConfig[NETWORKS.ARBITRUM].publicRPC,
+                    [NETWORKS.CANDLE]: networkConfig[NETWORKS.CANDLE].publicRPC,
                     [NETWORKS.ARBITRUM_RINKEBY]: networkConfig[NETWORKS.ARBITRUM_RINKEBY].publicRPC,
                     [NETWORKS.MAINNET]: networkConfig[NETWORKS.MAINNET].publicRPC,
                 },

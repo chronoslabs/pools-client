@@ -9,17 +9,17 @@ import {
 } from '~/types/filters';
 
 export const MARKET_FILTERS: Partial<Record<KnownNetwork, MarketFilterEnum[]>> = {
-    [NETWORKS.ARBITRUM]: [MarketFilterEnum.All, MarketFilterEnum.ETH, MarketFilterEnum.BTC, MarketFilterEnum.WTI],
+    [NETWORKS.CANDLE]: [MarketFilterEnum.All, MarketFilterEnum.ETH, MarketFilterEnum.BTC, MarketFilterEnum.WTI],
     [NETWORKS.ARBITRUM_RINKEBY]: [MarketFilterEnum.All, MarketFilterEnum.ETH, MarketFilterEnum.BTC],
 };
 
 export const COLLATERAL_FILTERS: Partial<Record<KnownNetwork, CollateralFilterEnum[]>> = {
-    [NETWORKS.ARBITRUM]: [CollateralFilterEnum.All, CollateralFilterEnum.USDC],
+    [NETWORKS.CANDLE]: [CollateralFilterEnum.All, CollateralFilterEnum.USDC],
     [NETWORKS.ARBITRUM_RINKEBY]: [CollateralFilterEnum.All, CollateralFilterEnum.PPUSD],
 };
 
 export const LEVERAGE_FILTERS: Partial<Record<KnownNetwork, LeverageFilterEnum[]>> = {
-    [NETWORKS.ARBITRUM]: [LeverageFilterEnum.All, LeverageFilterEnum.Three],
+    [NETWORKS.CANDLE]: [LeverageFilterEnum.All, LeverageFilterEnum.Three],
     [NETWORKS.ARBITRUM_RINKEBY]: [LeverageFilterEnum.All, LeverageFilterEnum.Three],
 };
 

@@ -3,13 +3,13 @@ import { tokenMap } from '@tracer-protocol/pools-js/data';
 import { LogoTicker } from '~/components/General/Logo';
 import { BridgeableAssets, BridgeableAssetWarnings, DestinationNetwork } from '~/types/bridge';
 
-const { ARBITRUM, ARBITRUM_RINKEBY, MAINNET, RINKEBY } = NETWORKS;
+const { CANDLE, ARBITRUM_RINKEBY, MAINNET, RINKEBY } = NETWORKS;
 
 export const destinationNetworkLookup: Record<string, DestinationNetwork> = {
     [RINKEBY]: ARBITRUM_RINKEBY,
     [ARBITRUM_RINKEBY]: RINKEBY,
-    [MAINNET]: ARBITRUM,
-    [ARBITRUM]: MAINNET,
+    [MAINNET]: CANDLE,
+    [CANDLE]: MAINNET,
 };
 
 export const bridgeableTickers: { [symbol: string]: LogoTicker } = {
@@ -38,10 +38,10 @@ export const BRIDGEABLE_ASSET_USDC = {
 };
 
 export const bridgeableAssets: BridgeableAssets = {
-    [ARBITRUM]: [
+    [CANDLE]: [
         {
-            ...tokenMap[ARBITRUM][bridgeableTickers.USDC],
-            symbol: tokenMap[ARBITRUM][bridgeableTickers.USDC].symbol as LogoTicker,
+            ...tokenMap[CANDLE][bridgeableTickers.USDC],
+            symbol: tokenMap[CANDLE][bridgeableTickers.USDC].symbol as LogoTicker,
             ...usdcSharedDetails,
         },
         BRIDGEABLE_ASSET_ETH,

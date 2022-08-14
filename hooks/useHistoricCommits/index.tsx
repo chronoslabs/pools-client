@@ -29,7 +29,7 @@ export const useHistoricCommits = (
         (_url, account, network, type, page) =>
             fetchCommitHistory({
                 account: account ?? '0',
-                network: (network as V2_SUPPORTED_NETWORKS) ?? NETWORKS.ARBITRUM,
+                network: (network as V2_SUPPORTED_NETWORKS) ?? NETWORKS.CANDLE,
                 type,
                 page,
                 pageSize: PAGE_ENTRIES, // TODO: allow user to choose results per page

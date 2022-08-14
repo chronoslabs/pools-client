@@ -73,13 +73,13 @@ export const HistoricCommitRow = ({
                     {
                         type: BlockExplorerAddressType.txn,
                         target: txnHashIn,
-                        logo: NETWORKS.ARBITRUM,
+                        logo: NETWORKS.CANDLE,
                         text: 'View Commit on Arbiscan',
                     },
                     {
                         type: BlockExplorerAddressType.txn,
                         target: txnHashOut,
-                        logo: NETWORKS.ARBITRUM,
+                        logo: NETWORKS.CANDLE,
                         text: 'View Upkeep on Arbiscan',
                     },
                 ]}

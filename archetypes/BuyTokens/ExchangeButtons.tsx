@@ -153,7 +153,7 @@ export const ExchangeButtons: React.FC<EXButtonsProps> = ({
                                 pool.shortToken.supply,
                                 true,
                             );
-                            open(constructBalancerLink(token?.address, NETWORKS.ARBITRUM, true), '_blank');
+                            open(constructBalancerLink(token?.address, NETWORKS.CANDLE, true), '_blank');
                         }}
                         isValidOnBalancer={isValidOnBalancer}
                         isValidAmount={isValidAmount}

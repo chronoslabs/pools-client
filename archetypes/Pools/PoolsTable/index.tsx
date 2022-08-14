@@ -167,7 +167,7 @@ export const PoolsTable = ({
     rows: BrowseTableRowData[];
     oneDayVolume: BigNumber;
 } & TProps): JSX.Element => {
-    const { account, network = NETWORKS.ARBITRUM } = useStore(selectWeb3Info, shallow);
+    const { account, network = NETWORKS.CANDLE } = useStore(selectWeb3Info, shallow);
     const [showModalPoolDetails, setShowModalPoolDetails] = useState(false);
     const [poolDetails, setPoolDetails] = useState<any>({});
     const marketSpotPrices = useStore(selectMarketSpotPrices, shallow);
@@ -677,7 +677,7 @@ const TokenRows: React.FC<
                                     className="ml-2 inline-block"
                                     onClick={() => {
                                         open(
-                                            constructBalancerLink(tokenInfo.address, NETWORKS.ARBITRUM, true),
+                                            constructBalancerLink(tokenInfo.address, NETWORKS.CANDLE, true),
                                             'blank',
                                         );
                                     }}

@@ -34,7 +34,7 @@ const UnsupportedNetwork: React.FC = () => {
                             <a
                                 className="mt-3 cursor-pointer text-tracer-400 underline hover:opacity-80"
                                 onClick={() => {
-                                    switchNetworks(provider, NETWORKS.ARBITRUM);
+                                    switchNetworks(provider, NETWORKS.CANDLE);
                                 }}
                             >
                                 Switch to Arbitrum Mainnet

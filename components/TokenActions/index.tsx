@@ -60,11 +60,11 @@ export const TokenActions = ({
                             <PlusOutlined className="relative ml-1 mr-[11px] inline h-[12px]" />
                             Add token to wallet
                         </button>
-                        {network === NETWORKS.ARBITRUM && (
+                        {network === NETWORKS.CANDLE && (
                             <button
                                 className={buttonStyles}
                                 onClick={() =>
-                                    open(constructBalancerLink(token.address, NETWORKS.ARBITRUM, true), 'blank')
+                                    open(constructBalancerLink(token.address, NETWORKS.CANDLE, true), 'blank')
                                 }
                             >
                                 <Logo className="relative mr-2 inline" ticker={'BALANCER'} />
@@ -82,7 +82,7 @@ export const TokenActions = ({
                                     )
                                 }
                             >
-                                <Logo className="relative mr-2 inline" ticker={NETWORKS.ARBITRUM} />
+                                <Logo className="relative mr-2 inline" ticker={NETWORKS.CANDLE} />
                                 View on Arbiscan
                             </button>
                         ) : null}

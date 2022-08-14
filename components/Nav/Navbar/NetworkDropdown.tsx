@@ -56,7 +56,7 @@ export default (({ className }) => {
                 />
             }
         >
-            <Option value={NETWORKS.ARBITRUM} onClick={() => switchNetworks(provider, NETWORKS.ARBITRUM)}>
+            <Option value={NETWORKS.CANDLE} onClick={() => switchNetworks(provider, NETWORKS.CANDLE)}>
                 Arbitrum
             </Option>
             <Option

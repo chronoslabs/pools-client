@@ -5,7 +5,7 @@ import { Network } from '~/types/networks';
 export const UNKNOWN_NETWORK = '0';
 
 export const knownNetworkToSubgraphUrl: Partial<Record<KnownNetwork, string>> = {
-    [NETWORKS.ARBITRUM]: 'https://api.thegraph.com/subgraphs/name/tracer-protocol/perpetual-pools-v2-arbitrum-one',
+    [NETWORKS.CANDLE]: 'https://api.thegraph.com/subgraphs/name/tracer-protocol/perpetual-pools-v2-arbitrum-one',
     [NETWORKS.ARBITRUM_RINKEBY]:
         'https://api.thegraph.com/subgraphs/name/tracer-protocol/perpetual-pools-v2-arbitrum-rinkeby',
 };
@@ -18,7 +18,7 @@ export const networkConfig: Record<KnownNetwork, Network> = {
     [NETWORKS.ARBITRUM_RINKEBY]: {
         id: NETWORKS.ARBITRUM_RINKEBY,
         name: 'Rinkeby',
-        logoTicker: NETWORKS.ARBITRUM,
+        logoTicker: NETWORKS.CANDLE,
         previewUrl: 'https://testnet.arbiscan.io',
         hex: '0x66EEB',
         publicRPC: process.env.NEXT_PUBLIC_TESTNET_RPC ?? 'https://rinkeby.arbitrum.io/rpc',
@@ -36,10 +36,10 @@ export const networkConfig: Record<KnownNetwork, Network> = {
             },
         },
     },
-    [NETWORKS.ARBITRUM]: {
-        id: NETWORKS.ARBITRUM,
+    [NETWORKS.CANDLE]: {
+        id: NETWORKS.CANDLE,
         name: 'Arbitrum',
-        logoTicker: NETWORKS.ARBITRUM,
+        logoTicker: NETWORKS.CANDLE,
         previewUrl: 'https://arbiscan.io/',
         hex: '0xA4B1',
         publicRPC: process.env.NEXT_PUBLIC_MAINNET_RPC ?? 'https://arb1.arbitrum.io/rpc',
@@ -94,5 +94,5 @@ export const networkConfig: Record<KnownNetwork, Network> = {
     },
 };
 
-export const DEFAULT_NETWORK = NETWORKS.ARBITRUM;
+export const DEFAULT_NETWORK = NETWORKS.CANDLE;
 export const DEFAULT_WSS_RPC = networkConfig[DEFAULT_NETWORK].publicWebsocketRPC;

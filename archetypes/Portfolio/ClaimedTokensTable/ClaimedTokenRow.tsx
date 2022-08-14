@@ -68,14 +68,14 @@ export const ClaimedTokenRow: React.FC<ClaimedTokenRowProps & ClaimedRowActions>
                         </ActionsButton>
                     </div>
                 </PortfolioStakeTooltip>
-                {network === NETWORKS.ARBITRUM && (
+                {network === NETWORKS.CANDLE && (
                     <PortfolioSellTooltip>
                         <div>
                             <ActionsButton
                                 size="xs"
                                 variant="primary-light"
                                 disabled={!balance.toNumber()}
-                                onClick={() => open(constructBalancerLink(address, NETWORKS.ARBITRUM, false), '_blank')}
+                                onClick={() => open(constructBalancerLink(address, NETWORKS.CANDLE, false), '_blank')}
                             >
                                 Sell
                             </ActionsButton>

@@ -87,12 +87,12 @@ export type LogoTicker =
     | 'BALANCER'
     | 'BASE'
     | 'WTI'
-    | typeof NETWORKS.ARBITRUM
+    | typeof NETWORKS.CANDLE
     | typeof NETWORKS.ARBITRUM_RINKEBY
     | 'DEFAULT';
 
 const logos: Record<LogoTicker, any> = {
-    [NETWORKS.ARBITRUM]: Arbitrum,
+    [NETWORKS.CANDLE]: Arbitrum,
     [NETWORKS.ARBITRUM_RINKEBY]: Arbitrum,
     ETHERSCAN: Etherscan,
     USDC: USDC,

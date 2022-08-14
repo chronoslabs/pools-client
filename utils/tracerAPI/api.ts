@@ -76,7 +76,7 @@ export const fetchCommitHistory: (params: {
     pageSize,
 }) => {
     let route = `${TRACER_API}/poolsv2/tradeHistory?page=${page}&pageSize=${pageSize}&network=${
-        network ?? NETWORKS.ARBITRUM
+        network ?? NETWORKS.CANDLE
     }&userAddress=${account}`;
     if (type === CommitTypeFilter.Mint) {
         route += '&types=LongMint&types=ShortMint';
@@ -169,7 +169,7 @@ export const fetchTradeStats: (params: {
     account: string;
 }) => Promise<TradeStatsAPIResponse> = async ({ network, pool, account }) => {
     const route = `${TRACER_API}/poolsv2/tradeStats?network=${
-        network ?? NETWORKS.ARBITRUM
+        network ?? NETWORKS.CANDLE
     }&userAddress=${account}&poolAddress=${pool}`;
 
     const fetchedTradeStats: TradeStatsAPIResponse = await fetch(route)
@@ -209,7 +209,7 @@ export const fetchNextPoolState: (params: { network: KnownNetwork; pool: string 
     network,
     pool,
 }) => {
-    const route = `${TRACER_API}/poolsv2/nextPoolState?network=${network ?? NETWORKS.ARBITRUM}&poolAddress=${pool}`;
+    const route = `${TRACER_API}/poolsv2/nextPoolState?network=${network ?? NETWORKS.CANDLE}&poolAddress=${pool}`;
 
     const fetchedNextPoolState: NextPoolState = await fetch(route)
         .then((res) => {
@@ -271,7 +271,7 @@ export const fetchPoolCommitStats: (
 ) => Promise<PoolCommitStats> = async (network, pool) => {
     const twentyFourHoursAgo = Math.floor(Date.now() / 1000) - TWENTY_FOUR_HOURS_IN_SECONDS;
     const route = `${TRACER_API}/poolsv2/stats/commits?network=${
-        network ?? NETWORKS.ARBITRUM
+        network ?? NETWORKS.CANDLE
     }&poolAddress=${pool}&from=${twentyFourHoursAgo}`;
     const fetchedPoolCommitStats: PoolCommitStats = await fetch(route)
         .then((res) => res.json())

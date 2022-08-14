@@ -5,7 +5,7 @@ import { BalancerInfo } from '~/types/balancer';
 export const BALANCER_VAULT_ADDRESS = '0xBA12222222228d8Ba445958a75a0704d566BF2C8';
 
 export const balancerConfig: Partial<Record<KnownNetwork, BalancerInfo>> = {
-    [NETWORKS.ARBITRUM]: {
+    [NETWORKS.CANDLE]: {
         graphUri: 'https://api.thegraph.com/subgraphs/name/balancer-labs/balancer-arbitrum-v2',
         baseUri: 'https://arbitrum.balancer.fi/#/trade',
         pools: [],

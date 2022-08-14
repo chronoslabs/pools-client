@@ -15,7 +15,7 @@ import { selectWeb3Info } from '~/store/Web3Slice';
 import { BridgeableAsset, BridgeableAssets, BridgeableBalances } from '~/types/bridge';
 import { Children } from '~/types/general';
 import { Network } from '~/types/networks';
-import { isArbitrumNetwork } from '~/utils/supportedNetworks';
+import { isCandleNetwork } from '~/utils/supportedNetworks';
 
 type CachedBridges = {
     [account: string]: {
@@ -44,7 +44,7 @@ export const ArbitrumBridgeContext = React.createContext<ArbitrumBridgeProps>({
     refreshBridgeableBalance: async (asset: BridgeableAsset) =>
         console.debug(`arbitrumBridge.refreshBridgeableBalance not ready`, asset),
     fromNetwork: networkConfig[NETWORKS.MAINNET],
-    toNetwork: networkConfig[NETWORKS.ARBITRUM],
+    toNetwork: networkConfig[NETWORKS.CANDLE],
     bridgeableAssets: {},
     bridgeableBalances: {},
 });
@@ -88,10 +88,10 @@ export const ArbitrumBridgeStore: React.FC = ({ children }: Children) => {
             return cachedBridges[account]?.[fromNetwork.id];
         }
 
-        const ethSigner = isArbitrumNetwork(fromNetwork.id)
+        const ethSigner = isCandleNetwork(fromNetwork.id)
             ? new ethers.providers.JsonRpcProvider(toNetwork.publicRPC).getSigner(account)
             : provider.getSigner(account);
-        const arbSigner = isArbitrumNetwork(fromNetwork.id)
+        const arbSigner = isCandleNetwork(fromNetwork.id)
             ? provider.getSigner(account)
             : new ethers.providers.JsonRpcProvider(toNetwork.publicRPC).getSigner(account);
 
@@ -135,7 +135,7 @@ export const ArbitrumBridgeStore: React.FC = ({ children }: Children) => {
             return;
         }
 
-        if (isArbitrumNetwork(fromNetwork.id)) {
+        if (isCandleNetwork(fromNetwork.id)) {
             // on layer 2, withdraw eth to layer 1
             const arbSys = bridge.l2Bridge.arbSys;
             handleTransaction({
@@ -219,7 +219,7 @@ export const ArbitrumBridgeStore: React.FC = ({ children }: Children) => {
             console.error(`Failed to bridge ERC20: bridgeable token not found with address ${tokenAddress}`);
             return;
         }
-        if (isArbitrumNetwork(fromNetwork.id)) {
+        if (isCandleNetwork(fromNetwork.id)) {
             // we are on layer 2, withdraw back to layer 1
 
             const l1TokenAddress = await bridge.l2Bridge.getERC20L1Address(tokenAddress);
@@ -362,7 +362,7 @@ export const ArbitrumBridgeStore: React.FC = ({ children }: Children) => {
 
         try {
             if (asset.symbol === bridgeableTickers.ETH) {
-                const balance = isArbitrumNetwork(fromNetwork.id)
+                const balance = isCandleNetwork(fromNetwork.id)
                     ? await bridge?.l2Bridge.getL2EthBalance()
                     : await bridge?.l1Bridge.getL1EthBalance();
 
@@ -372,7 +372,7 @@ export const ArbitrumBridgeStore: React.FC = ({ children }: Children) => {
                     spender: '',
                 };
             } else if (asset.address) {
-                const tokenData = isArbitrumNetwork(fromNetwork.id)
+                const tokenData = isCandleNetwork(fromNetwork.id)
                     ? await bridge.l2Bridge.getL2TokenData(asset.address)
                     : await bridge.l1Bridge.getL1TokenData(asset.address);
 
@@ -431,7 +431,7 @@ const getERC20GatewayAddress = async (fromNetwork: Network, asset: BridgeableAss
         throw new Error('Could not get ERC20GatewayAddress: asset address is unknown');
     }
 
-    if (isArbitrumNetwork(fromNetwork.id)) {
+    if (isCandleNetwork(fromNetwork.id)) {
         const l1Address = await bridge.l2Bridge.getERC20L1Address(asset.address);
         if (!l1Address) {
             throw new Error(
